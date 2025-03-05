@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .heroButton {
+    @apply px-4 md:px-6 py-2 rounded-full uppercase text-[10px] md:text-xs xl:text-sm tracking-widest text-gray-500 transition-all hover:border-[#8257e5]/75 hover:text-[#8257e5]/75  hover:border border-[#8257e5]/75;
+  }
+  .contactInput {
+    @apply outline-none bg-slate-400/10 rounded-lg border-b-2 text-xs sm:text-sm md:text-2xl px-2 py-1 sm:px-5 sm:py-3 md:px-5 md:py-3 border-[#242424] text-gray-500 placeholder-gray-500 transition-all focus:border-[#8257e5]/40 hover:text-[#8257e5]/40;
+  }
+
+  /* .glowEffect {
+    @apply relative before:absolute before:inset-0 before:rounded-full before:content-['']
+           before:bg-[radial-gradient(circle,rgba(0,0,255,0.8)_0%,rgba(0,0,255,0.2)_70%,transparent_100%)]
+           before:w-[150%] before:h-[150%] before:blur-[10px] before:opacity-50;
+  } */
+}
