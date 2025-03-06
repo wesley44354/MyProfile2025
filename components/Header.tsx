@@ -12,7 +12,7 @@ type Props = {
 export default function Header({ socials, pageInfo }: Props) {
   return (
     <>
-      <header className="backdrop-blur-md sticky top-2 p-2 flex items-start justify-between md:px-20 px-5 z-50 m-2 rounded-lg">
+      <header className="backdrop-blur-sm sticky top-2 p-2 flex items-start justify-between md:px-20 px-5 z-50 m-2 rounded-lg">
         <motion.button
           initial={{
             x: -500,
@@ -28,10 +28,9 @@ export default function Header({ socials, pageInfo }: Props) {
             duration: 1,
           }}
           onClick={() => {
-            // Evitar recarga completa da página, use estados ou atualizações via API
-            window.location.reload();
+            // window.scrollTo({ top: 0, behavior: "smooth" });
           }}
-          aria-label="Recarregar página"
+          aria-label="Voltar ao topo"
           className="flex flex-row items-center h-full self-center decoration-transparent"
         >
           <img
