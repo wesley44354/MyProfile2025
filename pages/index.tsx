@@ -30,7 +30,7 @@ export default function Home({
   experiences,
 }: Props) {
   return (
-    <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory  overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-thumb-[#8257e5]/80 scrollbar-track-gray-400/40">
+    <div className="bg-[rgb(36,36,36)] text-white h-[100dvh] snap-y snap-mandatory  overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-thumb-[#8257e5]/80 scrollbar-track-gray-400/40">
       <Head>
         <link
           rel="icon"
@@ -44,14 +44,12 @@ export default function Home({
           sizes="32x32"
           href="/favicon32x32.png"
         />
-        <title>{`${pageInfo?.name} Portfolio`} </title>
+        <title>{`${pageInfo?.name} Portfólio`} </title>
       </Head>
 
       <Header pageInfo={pageInfo} socials={socials} />
 
-      <section id="hero" className="snap-start">
-        <Hero pageInfo={pageInfo} />
-      </section>
+      <Hero pageInfo={pageInfo} />
 
       <section id="skills" className="snap-center">
         <Skills skills={skills} />

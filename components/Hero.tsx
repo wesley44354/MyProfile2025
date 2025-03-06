@@ -1,38 +1,24 @@
 import { urlFor } from "../sanity";
 import { PageInfo } from "../typings";
-import { useEffect, useRef } from "react";
-import { Cursor, useTypewriter } from "react-simple-typewriter";
 
 type Props = {
   pageInfo: PageInfo;
 };
 
 export default function Hero({ pageInfo }: Props) {
-  const [text] = useTypewriter({
-    words: [pageInfo?.backgroundInformation || "Carregando..."],
-    loop: true,
-    typeSpeed: 0.5,
-    delaySpeed: 100000000,
-  });
-
-  const textRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (textRef.current) {
-      textRef.current.scrollIntoView({ behavior: "smooth", block: "end" });
-    }
-  }, [text]);
-
   return (
-    <div className="h-screen flex flex-col space-y-4 md:space-y-8 items-center justify-center text-center overflow-hidden">
-      <div className="flex md:max-h-[20%] max-h-[15%] overflow-visible items-center justify-center xl:gap-9">
+    <section
+      id="hero"
+      className="flex snap-start relative h-[100dvh] flex-col items-center justify-end text-center"
+    >
+      <div className="absolute mt-[18dvh] flex top-0 md:h-[20%] h-[15%] overflow-visible items-center justify-center xl:gap-9">
         <img
           src={urlFor(pageInfo?.profilePic).url()}
           alt={`Imagem de perfil de ${pageInfo?.name}`}
-          className="relative rounded-full h-full object-cover drop-shadow-[0_0_4rem_#fff]"
+          className="rounded-full h-full object-cover drop-shadow-[0_0_4rem_#fff]"
         />
         <div className="flex flex-col h-full justify-center gap-3">
-          <h1 className="font-bold text-xs md:text-2xl uppercase drop-shadow-[0_0_3rem_#fff]  text-[#828282] tracking-[0.2rem] sm:tracking-[0.4rem] md:tracking-[0.4rem]">
+          <h1 className="font-bold text-xs md:text-2xl uppercase text-[#828282] tracking-[0.2rem] sm:tracking-[0.4rem] md:tracking-[0.4rem]">
             {pageInfo?.name}
           </h1>
           <h2 className="text-[10px] sm:text-xs md:text-sm uppercase text-gray-500 tracking-[0.3rem] sm:tracking-[0.6rem] md:tracking-[0.6rem]">
@@ -40,14 +26,12 @@ export default function Hero({ pageInfo }: Props) {
           </h2>
         </div>
       </div>
-      <p
-        ref={textRef}
-        className="drop-shadow-[0_0_2rem_#000] md:w-[70%] w-[90%] md:max-h-[80%]  max-h-[85%] xl:text-lg md:text-lg text-sm italic text-gray-500 pb-1 overflow-hidden text-ellipsis"
-      >
-        <span>{text}</span>
 
-        {/* {done && <Cursor cursorColor="#8257e5" />} */}
-      </p>
-    </div>
+      <div className="md:mx-20 md:pt-10 flex self-end mx-2 h-[60%] mb-4 overflow-auto  scrollbar-thin scrollbar-thumb-[#8257e5]/80 scrollbar-track-gray-400/40">
+        <p className="mx-4 text-center text-sm xl:text-lg md:text-lg italic text-gray-500">
+          {pageInfo?.backgroundInformation}
+        </p>
+      </div>
+    </section>
   );
 }
