@@ -1,5 +1,5 @@
 import React from "react";
-import { urlFor } from "../sanity";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { PageInfo, Social } from "../typings";
 import { SocialIcon } from "react-social-icons";
@@ -33,12 +33,15 @@ export default function Header({ socials, pageInfo }: Props) {
           aria-label="Voltar ao topo"
           className="flex flex-row items-center h-full self-center decoration-transparent"
         >
-          <img
-            className="w-10 h-10 mx-4"
-            src={urlFor(pageInfo?.profilePic).url()}
-            alt={`Logo de ${pageInfo?.name}`}
-            loading="lazy"
-          />
+          <div className="select-none relative w-10 h-10 mx-4">
+            <Image
+              alt={`Logo de ${pageInfo?.name}`}
+              className="object-contain"
+              src="/logoGray.png"
+              loading="lazy"
+              fill
+            />
+          </div>
         </motion.button>
 
         <motion.div

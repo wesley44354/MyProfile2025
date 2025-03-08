@@ -13,6 +13,7 @@ import { fetchSkills } from "../utils/fetchSkills";
 import { fetchSocials } from "../utils/fetchSocials";
 import WorkExperience from "../components/WorkExperience";
 import { fetchExperiences } from "../utils/fetchExperiences";
+import CursorShadow from "../components/CursorShadow";
 
 type Props = {
   pageInfo: PageInfo;
@@ -30,7 +31,7 @@ export default function Home({
   experiences,
 }: Props) {
   return (
-    <div className="bg-[rgb(36,36,36)] text-white h-[100dvh] snap-y snap-mandatory  overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-thumb-[#8257e5]/80 scrollbar-track-gray-400/40">
+    <div className="bg-[rgb(36,36,36)] text-white h-[100dvh] snap-y snap-mandatory  overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-thumb-[#808080]/80 scrollbar-track-[rgb(36,36,36)]">
       <Head>
         <link
           rel="icon"
@@ -51,9 +52,7 @@ export default function Home({
 
       <Hero pageInfo={pageInfo} />
 
-      <section id="skills" className="snap-center">
-        <Skills skills={skills} />
-      </section>
+      <Skills skills={skills} />
 
       <section id="experience" className="snap-center">
         <WorkExperience experiences={experiences} />
@@ -86,6 +85,8 @@ export default function Home({
           </div>
         </footer>
       </Link> */}
+
+      <CursorShadow />
     </div>
   );
 }

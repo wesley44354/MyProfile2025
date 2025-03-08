@@ -1,5 +1,6 @@
-import { urlFor } from "../sanity";
+import Image from "next/image";
 import { PageInfo } from "../typings";
+import { motion } from "framer-motion";
 
 type Props = {
   pageInfo: PageInfo;
@@ -7,16 +8,28 @@ type Props = {
 
 export default function Hero({ pageInfo }: Props) {
   return (
-    <section
+    <motion.section
       id="hero"
-      className="flex snap-start relative h-[100dvh] flex-col items-center justify-end text-center"
+      initial={{
+        opacity: 0,
+      }}
+      whileInView={{
+        opacity: 1,
+      }}
+      transition={{
+        duration: 1.5,
+      }}
+      className="flex snap-start relative h-[100dvh] flex-col items-center justify-start text-center"
     >
-      <div className="absolute mt-[18dvh] flex top-0 md:h-[20%] h-[15%] overflow-visible items-center justify-center xl:gap-9">
-        <img
-          src={urlFor(pageInfo?.profilePic).url()}
-          alt={`Imagem de perfil de ${pageInfo?.name}`}
-          className="rounded-full h-full object-cover drop-shadow-[0_0_4rem_#fff]"
-        />
+      <div className="absolute z-10 px-4 mt-[18dvh] rounded-full backdrop-blur-sm flex top-0 md:h-[20%] h-[15%] overflow-visible items-center justify-center gap-2 xl:gap-9 bg-transparent">
+        <div className="select-none flow rounded-full h-full aspect-square filter drop-shadow-[0_0_4rem_#fff] overflow-visible">
+          <Image
+            alt={`Imagem de perfil de ${pageInfo?.name}`}
+            className="object-contain"
+            src="/logoGray.png"
+            fill
+          />
+        </div>
         <div className="flex flex-col h-full justify-center gap-3">
           <h1 className="font-bold text-xs md:text-2xl uppercase text-[#828282] tracking-[0.2rem] sm:tracking-[0.4rem] md:tracking-[0.4rem]">
             {pageInfo?.name}
@@ -27,11 +40,11 @@ export default function Hero({ pageInfo }: Props) {
         </div>
       </div>
 
-      <div className="md:mx-20 md:pt-10 flex self-end mx-2 h-[60%] mb-4 overflow-auto  scrollbar-thin scrollbar-thumb-[#8257e5]/80 scrollbar-track-gray-400/40">
-        <p className="mx-4 text-center text-sm xl:text-lg md:text-lg italic text-gray-500">
-          {pageInfo?.backgroundInformation}
+      <div className="md:mx-20 flex mx-2 pt-[35dvh] md:pt-[45dvh] overflow-auto snap-y scrollbar-none">
+        <p className="mx-4 text-center text-sm xl:text-lg md:text-lg italic text-gray-500 whitespace-pre-line">
+          {pageInfo?.bio}
         </p>
       </div>
-    </section>
+    </motion.section>
   );
 }

@@ -1,4 +1,4 @@
-import {defineType} from 'sanity'
+import { defineType } from 'sanity'
 
 export default defineType({
   name: 'pageInfo',
@@ -16,25 +16,10 @@ export default defineType({
       type: 'string'
     },
     {
-      name: 'heroImage',
-      title: 'Image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    },
-    {
-      name: 'backgroundInformation',
-      title: 'BackgroundInformation',
-      type: 'string'
-    },
-    {
-      name: 'profilePic',
-      title: 'ProfilePic',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
+      name: 'bio',
+      title: 'Bio',
+      type: 'text',
+      options: { rows: 5 }
     },
     {
       name: 'phoneNumber',

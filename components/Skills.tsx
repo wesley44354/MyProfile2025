@@ -1,88 +1,44 @@
-import { motion } from 'framer-motion'
-import Skill from './Skill'
-import { Skill as SkillType } from '../typings'
-import React, { useEffect, useState } from 'react';
+import React from "react";
+import Skill from "./Skill";
+import { motion } from "framer-motion";
+import { Skill as SkillType } from "../typings";
 
 type Props = {
-  skills: SkillType[]
-}
+  skills: SkillType[];
+};
 
-export default function Skills({skills}: Props) {
-
-  const [isMobile, setIsMobile] = useState(false);
-  
-  useEffect(() => {
-    function handleResize() {
-      setIsMobile(window.innerWidth < 768);
-    }
-
-    handleResize(); // Call it initially
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-
+export default function Skills({ skills }: Props) {
   return (
-    <>
-    {isMobile 
-    ?
-      <div 
-      className='h-screen flex relative flex-col text-center  xl:flex-row max-w-[2000px] xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto items-center'
-    >
-      <h3 className='absolute top-24 ml-5 uppercase tracking-[20px] text-gray-500 text-2xl'>
-        Skills
-      </h3>
-
-      <h3 className='absolute top-36  uppercase tracking-[3px] text-gray-500 text-xs md:text-sm'>
-        Hover over a skills for currency proficiency
-      </h3>
-
-      <div className='grid grid-cols-3 md:grid-cols-4 gap-5'>
-        {skills?.slice(0, skills.length / 2).map(skill => (
-          <Skill key={skill._id} skill={skill}  />
-        ))}
-
-        {skills?.slice(skills.length / 2, skills.length).map(skill => (
-          <Skill key={skill._id} skill={skill} directionLeft />
-        ))}
-      </div>
-      </div>
-    :
-      <motion.div 
+    <motion.section
+      id="skills"
       initial={{
-        opacity: 0
+        opacity: 0,
       }}
       whileInView={{
-        opacity: 1
+        opacity: 1,
       }}
       transition={{
-        duration: 1.5
+        duration: 1.5,
       }}
-      className='h-screen flex relative flex-col text-center xl:flex-row max-w-[2000px] xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto items-center'
+      className="snap-center h-[100dvh] flex relative flex-col text-center justify-start items-center pt-[18dvh] gap-10"
     >
-      <h3 className='absolute top-24 ml-5 uppercase tracking-[20px] text-gray-500 text-2xl'>
+      <h3 className="uppercase tracking-[20px] text-gray-500 text-2xl">
         Skills
       </h3>
 
-      <h3 className='absolute top-36  uppercase tracking-[3px] text-gray-500 text-xs md:text-sm'>
+      <h3 className="uppercase tracking-[3px] text-gray-500 text-xs md:text-sm">
         Hover over a skills for currency proficiency
       </h3>
 
-      <div className='grid grid-cols-3 md:grid-cols-4 gap-5'>
-        {skills?.slice(0, skills.length / 2).map(skill => (
-          <Skill key={skill._id} skill={skill}  />
+      <div className="select-none grid grid-cols-3 md:grid-cols-4 gap-5">
+        {skills?.slice(0, skills.length / 2).map((skill) => (
+          <Skill key={skill._id} skill={skill} />
         ))}
 
-        {skills?.slice(skills.length / 2, skills.length).map(skill => (
+        {skills?.slice(skills.length / 2, skills.length).map((skill) => (
           <Skill key={skill._id} skill={skill} directionLeft />
         ))}
       </div>
-      </motion.div>
-    }
-    </>
-
-  )
+    </motion.section>
+  );
 }
