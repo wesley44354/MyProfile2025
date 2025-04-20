@@ -28,17 +28,18 @@ export default function Header({ socials, pageInfo }: Props) {
             duration: 1,
           }}
           onClick={() => {
-            // window.scrollTo({ top: 0, behavior: "smooth" });
+            window.scrollTo({ top: 0, behavior: "smooth" });
           }}
           aria-label="Voltar ao topo"
           className="flex flex-row items-center h-full self-center decoration-transparent"
         >
           <div className="select-none relative w-10 h-10 mx-4">
             <Image
+              sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw"
               alt={`Logo de ${pageInfo?.name}`}
               className="object-contain"
               src="/logoGray.png"
-              loading="lazy"
+              priority
               fill
             />
           </div>

@@ -1,33 +1,32 @@
-import type { GetStaticProps } from "next";
 import Head from "next/head";
-import Link from "next/link";
-import ContactMe from "../components/ContactMe";
-import Header from "../components/Header";
 import Hero from "../components/Hero";
-import Projects from "../components/Projects";
+import Header from "../components/Header";
 import Skills from "../components/Skills";
-import { Experience, PageInfo, Project, Skill, Social } from "../typings";
+import type { GetStaticProps } from "next";
+import Projects from "../components/Projects";
+import { fetchSkills } from "../utils/fetchSkills";
+import { Widget } from "../components/Widget/Widget";
+import { fetchSocials } from "../utils/fetchSocials";
+import CursorShadow from "../components/CursorShadow";
 import { fetchPageInfo } from "../utils/fetchPageInfo";
 import { fetchProjects } from "../utils/fetchProjects";
-import { fetchSkills } from "../utils/fetchSkills";
-import { fetchSocials } from "../utils/fetchSocials";
 import WorkExperience from "../components/WorkExperience";
 import { fetchExperiences } from "../utils/fetchExperiences";
-import CursorShadow from "../components/CursorShadow";
+import { Experience, PageInfo, Project, Skill, Social } from "../typings";
 
 type Props = {
-  pageInfo: PageInfo;
   skills: Skill[];
-  projects: Project[];
   socials: Social[];
+  pageInfo: PageInfo;
+  projects: Project[];
   experiences: Experience[];
 };
 
 export default function Home({
-  pageInfo,
   skills,
-  projects,
   socials,
+  pageInfo,
+  projects,
   experiences,
 }: Props) {
   return (
@@ -54,37 +53,11 @@ export default function Home({
 
       <Skills skills={skills} />
 
-      <section id="experience" className="snap-center">
-        <WorkExperience experiences={experiences} />
-      </section>
+      <WorkExperience experiences={experiences} />
 
-      <section id="project" className="snap-center">
-        <Projects projects={projects} />
-      </section>
-
-      {/* <section id="contact" className="snap-end">
-        <ContactMe pageInfo={pageInfo} />
-      </section> */}
+      <Projects projects={projects} />
       {/* 
-      <Link href="#hero">
-        <footer className='sticky bottom-0 w-full cursor-pointer '>
-          <div className='flex items-center justify-center '>
-            <Image
-              className='h-10 w-10 filter grayscale hover:grayscale-0 rounded-full'
-              src={require("../public/logo.png")}
-              alt=""
-            />
-          </div>
-        </footer>
-      </Link> */}
-
-      {/* <Link href="https://api.whatsapp.com/send?phone=67998887913" target='_blank'>
-        <footer className='sticky bottom-0 w-full cursor-pointer flex justify-end p-5'>
-          <div className='flex items-center justify-center h-11 w-11 p-1 bg-green-600 rounded-full  hover:animate-pulse border-solid border-white border-1'>
-              <WhatsappLogo  className='h-9 w-9' />
-          </div>
-        </footer>
-      </Link> */}
+      <Widget /> */}
 
       <CursorShadow />
     </div>

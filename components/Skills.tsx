@@ -20,9 +20,9 @@ export default function Skills({ skills }: Props) {
       transition={{
         duration: 1.5,
       }}
-      className="snap-center h-[100dvh] flex relative flex-col text-center justify-start items-center pt-[18dvh] gap-10"
+      className="snap-center h-[100dvh] flex relative flex-col text-center justify-start items-center pt-[15dvh] gap-10"
     >
-      <h3 className="uppercase tracking-[20px] text-gray-500 text-2xl">
+      <h3 className="uppercase tracking-[15px] text-gray-500 text-2xl">
         Skills
       </h3>
 
