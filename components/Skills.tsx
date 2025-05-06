@@ -31,12 +31,8 @@ export default function Skills({ skills }: Props) {
       </h3>
 
       <div className="select-none grid grid-cols-3 md:grid-cols-4 gap-5">
-        {skills?.slice(0, skills.length / 2).map((skill) => (
+        {skills?.slice(0, skills.length).map((skill) => (
           <Skill key={skill._id} skill={skill} />
-        ))}
-
-        {skills?.slice(skills.length / 2, skills.length).map((skill) => (
-          <Skill key={skill._id} skill={skill} directionLeft />
         ))}
       </div>
     </motion.section>

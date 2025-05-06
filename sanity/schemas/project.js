@@ -12,8 +12,13 @@ export default defineType({
       type: 'string'
     },
     {
+      name: 'date',
+      title: 'Date',
+      type: 'date'
+    },
+    {
       name: 'isMobile',
-      title: 'É Mobile',
+      title: 'Is Mobile',
       type: 'boolean',
     },
     {
@@ -49,6 +54,11 @@ export default defineType({
       name: 'linkToBuild',
       title: 'LinkToBuild',
       type: 'url',
+    },
+    {
+      name: 'order',
+      title: 'Ordem',
+      type: 'number',
     },
   ],
 })

@@ -8,5 +8,6 @@
         "**/CVS": true,
         ".vscode": true
     },
-    "hide-files.files": []
+    "hide-files.files": [],
+    "postman.settings.dotenv-detection-notification-visibility": false
 }

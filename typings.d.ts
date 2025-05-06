@@ -40,7 +40,9 @@ export interface Skill extends SanityBody {
 
 export interface Experience extends SanityBody {
   _type: "experience";
-  company: string;
+  companyDescription: string;
+  companyName: string;
+  companySite: string;
   companyImage: Image;
   dateStarted: date;
   dateEnded: date;
@@ -51,9 +53,11 @@ export interface Experience extends SanityBody {
 }
 
 export interface Project extends SanityBody {
-  title: string;
   _type: "project";
+  title: string;
   image: Image;
+  date: string;
+  order: string;
   linkToBuild: string;
   summary: string;
   technologies: Technology[];

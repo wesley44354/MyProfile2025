@@ -1,4 +1,4 @@
-import { defineType} from 'sanity'
+import { defineType } from 'sanity'
 
 export default defineType({
   name: 'experience',
@@ -6,10 +6,21 @@ export default defineType({
   type: 'document',
   fields: [
     {
+      name: 'companyName',
+      title: 'Company Name',
+      type: 'string',
+    },
+    {
       name: 'jobTitle',
-      title: 'JobTitle',
+      title: 'Job Title',
       type: 'string'
     },
+    {
+      name: 'companySite',
+      title: 'Company Site',
+      type: 'url',
+    },
+
     {
       name: 'companyImage',
       title: 'Company Image',
@@ -19,9 +30,10 @@ export default defineType({
       },
     },
     {
-      name: 'company',
-      title: 'Company',
+      name: 'companyDescription',
+      title: 'Company Description',
       type: 'text',
+      options: { rows: 5 }
     },
     {
       name: 'dateStarted',
