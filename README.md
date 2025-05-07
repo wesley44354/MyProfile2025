@@ -38,13 +38,13 @@ NEXT_PUBLIC_BASE_URL=http://localhost:3000/
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/wesley44354/WesleyAlves.git
 
 # Acesse o diretório
-cd seu-repositorio
+cd WesleyAlves
 
 # Instale as dependências
-npm install
+yarn install
 
 # Crie um arquivo .env.local e adicione as variáveis de ambiente
 touch .env.local
