@@ -30,7 +30,7 @@ export default function Header({ socials, pageInfo }: Props) {
           onClick={() => {
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
-          aria-label="Voltar ao topo"
+          aria-label="Back to top"
           className="flex flex-row items-center h-full self-center decoration-transparent"
         >
           <div className="select-none relative w-10 h-10 mx-4">

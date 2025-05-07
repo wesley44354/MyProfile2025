@@ -20,18 +20,18 @@ export default function Skills({ skills }: Props) {
       transition={{
         duration: 1.5,
       }}
-      className="snap-center h-[100dvh] flex relative flex-col text-center justify-start items-center pt-[15dvh] gap-10"
+      className="snap-center h-[100dvh] flex relative flex-col text-center justify-start items-center pt-[15dvh] gap-5"
     >
       <h3 className="uppercase tracking-[15px] text-gray-500 text-2xl">
         Skills
       </h3>
 
-      <h3 className="uppercase tracking-[3px] text-gray-500 text-xs md:text-sm">
+      <h3 className="uppercase tracking-[3px] text-gray-500 text-xs md:text-sm p-5 pt-0 pb-0">
         Hover over a skills for currency proficiency
       </h3>
 
-      <div className="select-none grid grid-cols-3 md:grid-cols-4 gap-5">
-        {skills?.slice(0, skills.length).map((skill) => (
+      <div className="select-none grid grid-cols-3 md:grid-cols-4 gap-5 p-5">
+        {skills?.map((skill) => (
           <Skill key={skill._id} skill={skill} />
         ))}
       </div>

@@ -39,25 +39,30 @@ export default function Projects({ projects }: Props) {
                   {!project.isMobile ? (
                     <a
                       target="_blank"
+                      rel="noopener noreferrer"
                       href={project.linkToBuild}
                       className="italic text-center text-xs md:text-sm underline decoration-[#8257e5]/50 hover:cursor-pointer hover:animate-pulse"
                     >
-                      <h1>Clique aqui para ver o projeto</h1>
+                      Click here to see the project
                     </a>
                   ) : (
-                    <div className="flex flex-row justify-center">
+                    <div className="flex flex-row justify-center space-x-4">
                       <a
                         target="_blank"
+                        rel="noopener noreferrer"
                         href={project.linkToBuildApple}
-                        className="italic text-center text-xs md:text-sm underline decoration-[#8257e5]/50 hover:cursor-pointer hover:animate-pulse"
+                        className="hover:cursor-pointer hover:animate-pulse flex items-center"
                       >
+                        <span className="sr-only">Download na App Store</span>
                         <AppStoreLogo className="text-[#ffffff] h-7 w-7 animate-pulse" />
                       </a>
                       <a
                         target="_blank"
+                        rel="noopener noreferrer"
                         href={project.linkToBuildPlayStore}
-                        className="italic text-center text-xs md:text-sm underline decoration-[#8257e5]/50 hover:cursor-pointer hover:animate-pulse"
+                        className="hover:cursor-pointer hover:animate-pulse flex items-center"
                       >
+                        <span className="sr-only">Download na Google Play</span>
                         <GooglePlayLogo className="text-[#ffffff] h-7 w-7 animate-pulse" />
                       </a>
                     </div>
@@ -73,8 +78,9 @@ export default function Projects({ projects }: Props) {
                         (technology) =>
                           technology?.image && (
                             <img
-                              className="h-10 w-10"
                               key={technology._id}
+                              className="h-10 w-10"
+                              alt={technology.title}
                               src={urlFor(technology.image).url()}
                             />
                           )

@@ -27,7 +27,7 @@ export default function Hero({ pageInfo }: Props) {
             sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw"
             alt={`Imagem de perfil de ${pageInfo?.name}`}
             className="object-contai  rounded-full"
-            src="/logoGray.png"
+            src="/logoGraySmall.png"
             priority
             fill
           />

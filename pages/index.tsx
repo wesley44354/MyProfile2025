@@ -45,6 +45,10 @@ export default function Home({
           href="/favicon32x32.png"
         />
         <title>{`${pageInfo?.name} Portfólio`} </title>
+        <meta
+          name="description"
+          content={`Portfólio profissional de ${pageInfo?.name} com projetos, habilidades e experiências.`}
+        />
       </Head>
 
       <Header pageInfo={pageInfo} socials={socials} />
