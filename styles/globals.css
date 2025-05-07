@@ -16,3 +16,7 @@
            before:w-[150%] before:h-[150%] before:blur-[10px] before:opacity-50;
   } */
 }
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}

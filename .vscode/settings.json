@@ -6,8 +6,13 @@
         "**/.DS_Store": true,
         "**/Thumbs.db": true,
         "**/CVS": true,
-        ".vscode": true
+        ".vscode": true,
+        ".vercel": true,
+        ".next": true
     },
-    "hide-files.files": [],
+    "hide-files.files": [
+        ".vercel",
+        ".next"
+    ],
     "postman.settings.dotenv-detection-notification-visibility": false
 }

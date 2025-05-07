@@ -1,14 +1,14 @@
-import {defineConfig} from 'sanity'
-import {deskTool} from 'sanity/desk'
-import {visionTool} from '@sanity/vision'
-import {schemaTypes} from './schemas'
+import { defineConfig } from 'sanity'
+import { deskTool } from 'sanity/desk'
+import { schemaTypes } from './schemas'
+import { visionTool } from '@sanity/vision'
 
 export default defineConfig({
   name: 'default',
   title: 'Protfolio',
 
-  projectId: 'afv0f5cv',
-  dataset: 'production',
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
 
   plugins: [deskTool(), visionTool()],
 

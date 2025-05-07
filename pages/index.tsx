@@ -5,7 +5,6 @@ import Skills from "../components/Skills";
 import type { GetStaticProps } from "next";
 import Projects from "../components/Projects";
 import { fetchSkills } from "../utils/fetchSkills";
-import { Widget } from "../components/Widget/Widget";
 import { fetchSocials } from "../utils/fetchSocials";
 import CursorShadow from "../components/CursorShadow";
 import { fetchPageInfo } from "../utils/fetchPageInfo";
@@ -32,6 +31,47 @@ export default function Home({
   return (
     <div className="bg-[rgb(36,36,36)] text-white h-[100dvh] snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-thumb-[#808080]/80 scrollbar-track-[rgb(36,36,36)]">
       <Head>
+        <title>Wesley Alves | Desenvolvedor Mobile | React Native e Expo</title>
+        <meta
+          name="description"
+          content="Olá, sou Wesley Alves, desenvolvedor de software especializado em React Native e Expo. Veja meu perfil, projetos, habilidades e experiências profissionais."
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Wesley Alves" />
+        <meta name="language" content="pt-BR" />
+        <meta
+          name="keywords"
+          content="Wesley Alves, Desenvolvedor, React Native, Expo, Mobile, Portfólio"
+        />
+
+        {/* ENGLISH META */}
+        <meta httpEquiv="Content-Language" content="en" />
+        <meta
+          name="description"
+          content="I'm Wesley Alves, a software developer focused on mobile development with React Native and Expo. Check out my profile, skills, and professional projects."
+        />
+        <meta
+          name="keywords"
+          content="Wesley Alves, Developer, React Native, Expo, Mobile Developer, Portfolio"
+        />
+
+        {/* Open Graph (SEO social) */}
+        <meta
+          property="og:title"
+          content="Wesley Alves | Desenvolvedor Mobile"
+        />
+        <meta
+          property="og:description"
+          content="Perfil profissional de Wesley Alves, com foco em React Native e Expo."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://wesleyalvesprofile.vercel.app"
+        />
+        <meta property="og:image" content="/thumbnail.png" />
+
+        {/* Favicon */}
         <link
           rel="icon"
           type="image/png"
@@ -44,11 +84,6 @@ export default function Home({
           sizes="32x32"
           href="/favicon32x32.png"
         />
-        <title>{`${pageInfo?.name} Portfólio`} </title>
-        <meta
-          name="description"
-          content={`Portfólio profissional de ${pageInfo?.name} com projetos, habilidades e experiências.`}
-        />
       </Head>
 
       <Header pageInfo={pageInfo} socials={socials} />
@@ -60,8 +95,6 @@ export default function Home({
       <WorkExperience experiences={experiences} />
 
       <Projects projects={projects} />
-      {/* 
-      <Widget /> */}
 
       <CursorShadow />
     </div>
