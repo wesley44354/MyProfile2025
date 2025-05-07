@@ -38,7 +38,7 @@ NEXT_PUBLIC_BASE_URL=http://localhost:3000/
 
 ```bash
 # Clone o repositório
-git clone https://github.com/wesley44354/WesleyAlves.git
+git clone https://github.com/wesleyalvesdeveloper99/WesleyAlves.git
 
 # Acesse o diretório
 cd WesleyAlves
