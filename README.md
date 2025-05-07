@@ -61,7 +61,7 @@ NEXT_PUBLIC_BASE_URL=http://localhost:3000/
 npm run dev
 ```
 
-Acesse [wesleyalvesprofile.vercel.app/](wesleyalvesprofile.vercel.app/)
+Acesse [https://wesleyalvesprofile.vercel.app/](https://wesleyalvesprofile.vercel.app/)
 
 ## 🌐 Deploy
 
