@@ -58,7 +58,7 @@ NEXT_PUBLIC_BASE_URL=http://localhost:3000/
 
 ```bash
 # Inicie o servidor de desenvolvimento
-npm run dev
+yarn start
 ```
 
 Acesse [https://wesleyalvesprofile.vercel.app/](https://wesleyalvesprofile.vercel.app/)
