@@ -9,16 +9,12 @@ type Props = {
 
 export default function Skill({ skill }: Props) {
   return (
-    <div
-      style={{ userSelect: "none", WebkitUserSelect: "none" }}
-      className="select-none rounded-full border border-[#808080] object-cover group relative flex cursor-pointer hover:drop-shadow-[0_0_4rem_#fff] transition-all"
-    >
+    <div className="select-none rounded-full border border-[#808080] object-cover group relative flex cursor-pointer hover:drop-shadow-[0_0_4rem_#fff] transition-all w-[20dvw] md:w-[10dvw]  aspect-square">
       <Image
-        width={128}
-        height={128}
+        fill
         alt={skill.title}
         src={urlFor(skill?.image).url()}
-        className="select-none object-contain p-5 transition duration-300 ease-in-out"
+        className="select-none object-contain p-5"
       />
       <div className="select-none absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out group-hover:bg-[#808080] inset-0 rounded-full flex justify-center items-center">
         <p className="select-none text-xl md:text-3xl font-bold opacity-100 text-[#242424]">
